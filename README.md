@@ -24,7 +24,8 @@
 
 {Make a list of websites that you found helpful in this project}
 * [Youtube: Setting up Django](https://www.youtube.com/watch?v=qN_0EZ8M20Q)
-* [Web Site Name](http://url.link.goes.here)
+* [Youtube: Learning Django](https://www.youtube.com/watch?v=nGIg40xs9e4)
+* [Real Python: Learning how to add images](https://realpython.com/get-started-with-django-1/#upload-images)
 
 # Future Work
 

@@ -1,0 +1,16 @@
+<!-- art_gallery.html -->
+
+{% extends "base.html" %} {% block title %} Art Gallery {% endblock %}
+{% block content %}
+<h1>Art Gallery</h1>
+<div class="gallery">
+    <button class="nav-button" id="previous">&lt;</button>
+
+    <div class="image-container">
+        <img class="image" src="{{ Images.0.image.url }}" alt="{{ Image.0.title }}" width="30%">
+        <p id="image-title">{{ Image.0.title }}</p>
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
