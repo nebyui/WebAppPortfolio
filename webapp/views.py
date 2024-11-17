@@ -9,6 +9,7 @@ def home(request):
 
 def art_gallery(request):
     images = Image.objects.all()
+    image_data = list(images.values('image', 'title'))
     return render(request, "art_gallery.html", {"Images": images})
 
 def programming_projects(request):

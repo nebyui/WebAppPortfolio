@@ -1,12 +1,8 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+The purpose of this project was to become familiar with developing web apps using Django. I chose Django since it handles many tasks automatically and can be easily used to make databases
 
-{Provide a description the web app that you wrote. Describe how to start a test server on your computer and what website to open up to see the first page of the app.}
-
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running (starting the server and navigating through the web pages) and a walkthrough of the code.}
+This web app serves as a portfolio app for my art and programming projects. It is far from containing all of my projects, but it has enough to populate the page and allows more to be easily added.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
@@ -16,9 +12,11 @@
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+Made in Visual Studio Code
 
-{Describe the programming language that you used and any libraries.}
+Written in Python, HTML, CSS, and JavaScript
+
+ChatGPT assisted
 
 # Useful Websites
 
@@ -26,10 +24,11 @@
 * [Youtube: Setting up Django](https://www.youtube.com/watch?v=qN_0EZ8M20Q)
 * [Youtube: Learning Django](https://www.youtube.com/watch?v=nGIg40xs9e4)
 * [Real Python: Learning how to add images](https://realpython.com/get-started-with-django-1/#upload-images)
+* [ChatGPT: For Debugging and assisting with making CSS and JavaScript](https://chatgpt.com)
 
 # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Completing Portfolios
+* Improving UI and visual apperance
+* Taking higher quality picture of artwork

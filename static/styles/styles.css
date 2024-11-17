@@ -1,0 +1,122 @@
+#content {
+    margin: 0 auto;
+    background-color: gray;
+}
+
+body {
+    text-align: center;
+
+}
+
+h1 {
+    padding: 20px;
+}
+
+p {
+    font-weight: bold;
+}
+
+.github-links {
+    padding-top: 10px;
+    font-size: larger;
+    font-weight: bold;
+    color: blue;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+
+}
+
+.image-item {
+    height: 500px;
+    padding: 10px;
+}
+
+.image-title {
+    color: white;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+.image-container {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    align-items: center;
+    background-color: #3b3b3b;
+    text-align: center;
+}
+
+
+#previous,
+#next {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 25%;
+    padding: 10px;
+    border: 10px solid;
+    border-color: #454545;
+    background-color: #454545;
+    font-size: 25px;
+}
+
+#previous {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+}
+
+#next {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+}
+
+
+#accordion_section {
+    width: fit-content;
+    text-align: center;
+    padding-right: 50px;
+
+}
+
+#accordion_section p {
+    padding-right: 0px
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #8f8f8f;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-family: var(--heading-font);
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover {
+    background-color: #a3a2a2;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: var(--accent4-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
