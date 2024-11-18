@@ -1,6 +1,6 @@
 <!-- art_gallery.html -->
 
-{% extends "base.html" %}
+{% extends "base.html" %} <!-- Inherits all code from the base.html-->
 {% load static %}
 {% block title %} Art Gallery {% endblock %}
 {% block content %}
@@ -11,17 +11,19 @@
     <div id="gallery">
 
         <div class="image-container">
-            {% for image in Images %}
+            {% for image_item in Images %} <!-- Python for loop that iterates through each item in Images database-->
 
-            {% if image.image %}
-            <img class="image-item" id="image-{{forloop.counter0}}" src="{{ image.image.url }}" alt="{{ image.title }}"
-                style="display: none">
+            {% if image_item.image %}
+            <!-- Creates img element, numbers each id depending on loop count, retrieves url to image and title from the image_item-->
+            <img class="image-item" id="image-{{forloop.counter0}}" src="{{ image_item.image.url }}"
+                alt="{{ image_item.title }}" style="display: none">
             {% endif %}
 
-            <p class="image-title" id="title-{{forloop.counter0}}" style="display: none;">{{ image.title }}</p>
+            <!--Retrieves image title from database-->
+            <p class="image-title" id="title-{{forloop.counter0}}" style="display: none;">{{ image_item.title }}</p>
             {% endfor %}
         </div>
-        <button class="nav-button" id="previous">&lt;</button>
+        <button class="nav-button" id="previous">&lt;</button> <!-- Arrow Buttons-->
         <button class="nav-button" id="next">&gt;</button>
     </div>
 </body>
@@ -29,10 +31,10 @@
 <script>
     console.log("Script On")
 
-    let currentIndex = 0;
+    let currentIndex = 0; // Represents the number value in the image id's 
 
-    const imageList = document.querySelectorAll('.image-container img')
-    const titleList = document.querySelectorAll(`.image-container p`)
+    const imageList = document.querySelectorAll('.image-container img') // Gets all img elements
+    const titleList = document.querySelectorAll(`.image-container p`) // Gets all p elements
 
     const prevButton = document.getElementById("previous");
     const nextButton = document.getElementById("next");
@@ -46,16 +48,19 @@
     function updateImageDisplay() {
         console.log("Updated Display")
 
+        // Loops through all images in HTML page, if currentIndex and image index mactch, it gest shown, all others are hidden
         imageList.forEach((img, index) => {
             img.style.display = index === currentIndex ? "grid" : "none";
 
         })
 
+        // Same but for title element
         titleList.forEach((p, index) => {
             p.style.display = index === currentIndex ? "grid" : "none"
         })
     }
 
+    // Updates the currentIndex to match the index of the current image, depending on if the user goes forwards or backwards
     prevButton.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
         updateImageDisplay()

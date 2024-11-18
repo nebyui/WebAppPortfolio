@@ -8,7 +8,9 @@ This web app serves as a portfolio app for my art and programming projects. It i
 
 # Web Pages
 
-{Describe each of the web pages you created and how the web app transitions between each of them.  Also describe what is dynamically created on each page.}
+* Home Page: Nothing much, just provides introduction and navigation to the other two pages
+* Art Gallery: Contains art viewer, the user can cycle through each image from database using arrow buttons
+* Programming Project: Loads accordion menue with each project in the database, which contains a link to the GitHub repository and YouTube video demo
 
 # Development Environment
 
@@ -20,15 +22,14 @@ ChatGPT assisted
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [Youtube: Setting up Django](https://www.youtube.com/watch?v=qN_0EZ8M20Q)
 * [Youtube: Learning Django](https://www.youtube.com/watch?v=nGIg40xs9e4)
+* [Pastebin.com: Base template for Django App](https://pastebin.com/AMzZVL12)
 * [Real Python: Learning how to add images](https://realpython.com/get-started-with-django-1/#upload-images)
 * [ChatGPT: For Debugging and assisting with making CSS and JavaScript](https://chatgpt.com)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
 * Completing Portfolios
 * Improving UI and visual apperance
 * Taking higher quality picture of artwork

@@ -1,6 +1,7 @@
 <!-- programming_gallery.html -->
 
-{% extends "base.html" %} {% block title %} Programming Projects {% endblock %}
+{% extends "base.html" %} <!-- Inherits all code from the base.html-->
+{% block title %} Programming Projects {% endblock %}
 
 {% load static %}
 {% block content %}
@@ -9,51 +10,47 @@
 <body id="content">
     <div id="accordion_section">
         <h1>Programming Projects</h1>
-        <button class="accordion">File Saving System</button>
+
+        {% for program in Programs %} <!-- Python for loop that iterates over each item in Program database-->
+
+        <button class="accordion">{{ program.title }}</button> <!-- Gets title of item, puts it on button-->
         <div class="panel">
 
-            <a class="github-links" href="https://github.com/nebyui/text-editor">GitHub Repository</a>
-            <iframe width="1266" height="712" src="https://www.youtube.com/embed/X37GxEtWCbo"
-                title="Long Program Demonstration 1" frameborder="0"
+
+            <!-- Gets the gitLink and demoLink fields from each item in databse, mades the HTML elements for them -->
+            <a class="github-links" href="{{ program.gitLInk }}">GitHub Repository</a>
+            <iframe width="1266" height="712" src="{{ program.demoLink }}" title="{{ program.title }}" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-            <iframe width="1266" height="712" src="https://www.youtube.com/embed/IVVtM6c2IDw"
-                title="Long Program Demonstration 2" frameborder="0"
+            <!-- Some programs have more than one video, so this adds them if it exists -->
+            {% if program.demoLink2 %}
+            <iframe width="1266" height="712" src="{{ program.demoLink2 }}" title="{{ program.title }} Part 2"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            {% endif %}
+
         </div>
+        {% endfor %}
 
-        <button class="accordion">Art App for PC</button>
-        <div class="panel">
-
-            <a class="github-links" href="https://github.com/nebyui/paint-app">GitHub Repository</a>
-            <iframe width="1266" height="712" src="https://www.youtube.com/embed/vDHuzt3ETCw"
-                title="Paint App Demonstration" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-
-        <button class="accordion">Art App for Android</button>
-        <div class="panel">
-
-            <a class="github-links" href="https://github.com/nebyui/PaintMobleApp">GitHub Repository</a>
-            <iframe width="1266" height="712" src="https://www.youtube.com/embed/U0pYvlQE11k"
-                title="Mobile app demonstration" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-
-    </div>
     </div>
 </body>
 <script>
-    var acc = document.getElementsByClassName("accordion");
+
+    // Each item in the class accordion is the button, link element, and iframe element made in for loop
+    var accordion = document.getElementsByClassName("accordion");
     var i;
 
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
+
+    for (i = 0; i < accordion.length; i++) {
+
+        // When the button gets clicked it changes the CSS style to show and hide the accordion panel
+
+        accordion[i].addEventListener("click", function () {
             this.classList.toggle("active");
+
+            // Gets the "panel" element that is right after the button in HTML to modiy CSS
             var panel = this.nextElementSibling;
             if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;

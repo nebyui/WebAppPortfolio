@@ -36,6 +36,8 @@ p {
     padding: 10px;
 }
 
+
+/* The JavaScript in art_gallery.html modifies this element's "display" property */
 .image-title {
     color: white;
     padding-bottom: 10px;
@@ -92,7 +94,6 @@ p {
     padding-right: 0px
 }
 
-/* Style the buttons that are used to open and close the accordion panel */
 .accordion {
     background-color: #8f8f8f;
     color: rgb(0, 0, 0);
@@ -107,12 +108,11 @@ p {
     transition: 0.4s;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .accordion:hover {
     background-color: #a3a2a2;
 }
 
-/* Style the accordion panel. Note: hidden by default */
+/* The JavaScript in programming_projects.html modifies this element's "max-height" property */
 .panel {
     padding: 0 18px;
     background-color: var(--accent4-color);

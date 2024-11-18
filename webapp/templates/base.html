@@ -1,5 +1,8 @@
 <!-- base.html -->
 
+
+<!-- Code template from https://pastebin.com/AMzZVL12 -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +19,9 @@
 </head>
 
 <body>
+
+    <!-- Navigation Bar -->
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
@@ -25,12 +31,15 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'Home' %}">Home</a>
+                    <!-- Goes to URL that was given the name "Home" -->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'Art Gallery' %}">Art Portfolio</a>
+                    <!-- Same, but for "Art Gallery" -->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'Programming Projects' %}">Programming Portfolio</a>
+                    <!-- Same, but for "Programming Projects" -->
                 </li>
             </ul>
         </div>
