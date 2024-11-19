@@ -19,17 +19,20 @@
 
             <!-- Gets the gitLink and demoLink fields from each item in databse, mades the HTML elements for them -->
             <a class="github-links" href="{{ program.gitLInk }}">GitHub Repository</a>
-            <iframe width="1266" height="712" src="{{ program.demoLink }}" title="{{ program.title }}" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div>
+                <iframe width="633" height="356" src="{{ program.demoLink }}" title="{{ program.title }}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-            <!-- Some programs have more than one video, so this adds them if it exists -->
-            {% if program.demoLink2 %}
-            <iframe width="1266" height="712" src="{{ program.demoLink2 }}" title="{{ program.title }} Part 2"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            {% endif %}
+                <!-- Some programs have more than one video, so this adds them if it exists -->
+                {% if program.demoLink2 %}
+                <iframe width="633" height="356" src="{{ program.demoLink2 }}" title="{{ program.title }} Part 2"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                {% endif %}
+            </div>
 
         </div>
         {% endfor %}
@@ -48,7 +51,6 @@
         // When the button gets clicked it changes the CSS style to show and hide the accordion panel
 
         accordion[i].addEventListener("click", function () {
-            this.classList.toggle("active");
 
             // Gets the "panel" element that is right after the button in HTML to modiy CSS
             var panel = this.nextElementSibling;
